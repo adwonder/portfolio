@@ -84,6 +84,8 @@ async function renderProject() {
     function revealProject() {
         heroEl.classList.add('visible');
         setTimeout(() => detailEl.classList.add('visible'), 200);
+        // Re-init scroll reveal for gallery items after layout settles
+        setTimeout(() => initScrollReveal(), 500);
     }
 
     let revealed = false;

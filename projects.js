@@ -11,11 +11,11 @@ const PROJECTS = [
       "Liquid explorations.",
       "Made in Cinema 4D using built-in simulation tools."
     ],
-    "cover": "covers/Liquidity/Liquid_1.png",
+    "cover": "covers/Liquidity/liquid_1.png",
     "media": "image",
     "gallery": [
-      "covers/Liquidity/Liquid_2.png",
-      "covers/Liquidity/Liquid_3.png"
+      "covers/Liquidity/liquid_2.png",
+      "covers/Liquidity/liquid_3.png"
     ]
   },
   {
