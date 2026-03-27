@@ -73,7 +73,7 @@ async function renderProject() {
         return;
     }
 
-    document.title = `${p.title} — wonder`;
+    document.title = 'wonder';
 
     // Hero
     heroEl.innerHTML = `<a href="index.html" class="back-link">Back to works</a><div class="project-hero-media"></div>`;
@@ -100,17 +100,17 @@ async function renderProject() {
 
     if (p.media === 'video' && p.video) {
         const video = document.createElement('video');
-        video.src = p.video;
         video.controls = true;
         video.playsInline = true;
         video.setAttribute('playsinline', '');
         video.setAttribute('webkit-playsinline', '');
-        video.preload = 'auto';
-        video.onloadeddata = () => {
+        video.preload = 'metadata';
+        video.onloadedmetadata = () => {
             heroMedia.appendChild(video);
             heroMedia.style.minHeight = '';
             safeReveal();
         };
+        video.src = p.video;
         video.onerror = () => {
             // Video failed, try cover image as fallback
             if (p.cover) {
@@ -174,6 +174,8 @@ async function renderProject() {
         `).join('');
 
         initLightbox(p.gallery, p.title);
+        // Trigger scroll reveal for gallery items after they're in the DOM
+        requestAnimationFrame(() => initScrollReveal());
     }
 }
 
