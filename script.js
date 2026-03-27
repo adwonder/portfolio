@@ -227,6 +227,22 @@ function initLightbox(images, title) {
         if (e.key === 'ArrowLeft') show(current - 1);
         if (e.key === 'ArrowRight') show(current + 1);
     });
+
+    // Touch swipe support
+    let touchStartX = 0;
+    let touchStartY = 0;
+    lightbox.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
+    }, { passive: true });
+    lightbox.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        const dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+            if (dx < 0) show(current + 1);
+            else show(current - 1);
+        }
+    }, { passive: true });
 }
 
 // ===== Render: About Page =====
@@ -317,6 +333,9 @@ function initScrollReveal() {
 
 // ===== Custom Cursor =====
 function initCursor() {
+    // Skip on touch devices
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+
     const cursor = document.createElement('div');
     cursor.classList.add('custom-cursor');
     document.body.appendChild(cursor);
