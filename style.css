@@ -111,7 +111,6 @@ a:hover {
     grid-template-columns: 1fr 45% 1fr;
     align-items: center;
     margin-bottom: 80px;
-    cursor: pointer;
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.8s ease, transform 0.8s ease;
@@ -337,7 +336,6 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -455,7 +453,6 @@ a:hover {
 }
 
 .project-gallery .gallery-item {
-    cursor: pointer;
 }
 
 /* Lightbox */
@@ -490,7 +487,6 @@ a:hover {
     right: 32px;
     width: 40px;
     height: 40px;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -512,7 +508,6 @@ a:hover {
     transform: translateY(-50%);
     width: 48px;
     height: 48px;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
