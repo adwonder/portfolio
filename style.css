@@ -305,7 +305,6 @@ a:hover {
 
 .project-hero-media {
     width: 100%;
-    min-height: 65vh;
     margin-bottom: 20px;
     position: relative;
 }
@@ -705,6 +704,15 @@ a:hover {
 
     .works {
         padding: 120px 24px 40px;
+    }
+
+    .project-hero {
+        padding: 100px 24px 20px;
+    }
+
+    .project-hero-media img,
+    .project-hero-media video {
+        max-height: 50vh;
     }
 
     .project-detail-meta {

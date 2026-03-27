@@ -101,6 +101,9 @@ async function renderProject() {
         video.src = p.video;
         video.controls = true;
         video.playsInline = true;
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+        video.preload = 'auto';
         video.onloadeddata = () => {
             heroMedia.appendChild(video);
             heroMedia.style.minHeight = '';
