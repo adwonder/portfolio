@@ -11,11 +11,11 @@ const PROJECTS = [
       "Liquid explorations.",
       "Made in Cinema 4D using built-in simulation tools."
     ],
-    "cover": "F:\\Claude Code\\portfolio\\covers\\Liquidity\\Liquid_1.png",
+    "cover": "covers/Liquidity/Liquid_1.png",
     "media": "image",
     "gallery": [
-      "F:\\Claude Code\\portfolio\\covers\\Liquidity\\Liquid_2.png",
-      "F:\\Claude Code\\portfolio\\covers\\Liquidity\\Liquid_3.png"
+      "covers/Liquidity/Liquid_2.png",
+      "covers/Liquidity/Liquid_3.png"
     ]
   },
   {
@@ -32,11 +32,11 @@ const PROJECTS = [
       "Non-commercial project for Teenage Engineering.\nVisualization of TP-7 field recorder.",
       "Recorder model made in Blender from scratch. Shading/Lighting made in Cinema 4D using Redshift renderer."
     ],
-    "cover": "F:\\Claude Code\\portfolio\\covers\\TE\\tp-7_red.png",
+    "cover": "covers/TE/tp-7_red.png",
     "media": "image",
     "gallery": [
-      "F:\\Claude Code\\portfolio\\covers\\TE\\tp-7.png",
-      "F:\\Claude Code\\portfolio\\covers\\TE\\tp-7_blue.png"
+      "covers/TE/tp-7.png",
+      "covers/TE/tp-7_blue.png"
     ]
   },
   {
