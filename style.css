@@ -28,6 +28,11 @@ body {
     line-height: 1.5;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    cursor: none;
+}
+
+a, button, .project, .play-btn, .gallery-item, .lightbox-nav, .lightbox-close {
+    cursor: none;
 }
 
 a {
@@ -795,5 +800,8 @@ a:hover {
 @media (hover: none), (pointer: coarse) {
     .custom-cursor {
         display: none !important;
+    }
+    body, a, button, .project, .play-btn, .gallery-item, .lightbox-nav, .lightbox-close {
+        cursor: auto;
     }
 }
