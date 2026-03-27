@@ -31,8 +31,8 @@ body {
     cursor: none;
 }
 
-a, button, .project, .play-btn, .gallery-item, .lightbox-nav, .lightbox-close {
-    cursor: none;
+*, *::before, *::after {
+    cursor: none !important;
 }
 
 a {
@@ -801,7 +801,7 @@ a:hover {
     .custom-cursor {
         display: none !important;
     }
-    body, a, button, .project, .play-btn, .gallery-item, .lightbox-nav, .lightbox-close {
-        cursor: auto;
+    *, *::before, *::after {
+        cursor: auto !important;
     }
 }
