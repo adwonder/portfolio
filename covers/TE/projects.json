@@ -1,0 +1,18 @@
+[
+  {
+    "id": "teenage-engineering",
+    "title": "Teenage Engineering",
+    "year": "2025",
+    "client": "Personal Work",
+    "expertise": [],
+    "description": [
+      "Non-commercial project with visualization of teenage engineering tp-7 field recorder."
+    ],
+    "cover": "F:\\Claude Code\\portfolio\\covers\\TE\\tp-7_red.png",
+    "media": "image",
+    "gallery": [
+      "F:\\Claude Code\\portfolio\\covers\\TE\\tp-7.png",
+      "F:\\Claude Code\\portfolio\\covers\\TE\\tp-7_blue.png"
+    ]
+  }
+]
