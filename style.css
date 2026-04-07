@@ -742,30 +742,21 @@ a:hover {
         margin-bottom: 24px;
     }
 
-    /* Horizontal swipe gallery on mobile */
+    /* Vertical stacked gallery on mobile */
     .project-gallery {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
+        display: grid;
+        grid-template-columns: 1fr;
         gap: 12px;
         padding: 20px 24px 60px;
     }
 
     .project-gallery .gallery-item {
-        flex: 0 0 85vw;
-        scroll-snap-align: center;
         aspect-ratio: 16 / 10;
     }
 
     .project-gallery .gallery-item.full {
-        flex: 0 0 85vw;
         grid-column: unset;
         aspect-ratio: 16 / 10;
-    }
-
-    .project-gallery::-webkit-scrollbar {
-        display: none;
     }
 
     .project-detail-meta {

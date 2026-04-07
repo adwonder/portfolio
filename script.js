@@ -174,8 +174,6 @@ async function renderProject() {
         `).join('');
 
         initLightbox(p.gallery, p.title);
-        // Trigger scroll reveal for gallery items after they're in the DOM
-        requestAnimationFrame(() => initScrollReveal());
     }
 }
 
