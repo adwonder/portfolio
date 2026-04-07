@@ -670,7 +670,7 @@ a:hover {
 
     .project-info::after {
         content: attr(data-year);
-        font-size: 13px;
+        font-size: 16px;
         color: var(--text-muted);
     }
 
