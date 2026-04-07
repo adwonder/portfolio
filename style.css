@@ -311,6 +311,7 @@ a:hover {
     width: 100%;
     margin-bottom: 20px;
     position: relative;
+    overflow: hidden;
 }
 
 .project-hero-media img {
@@ -318,6 +319,11 @@ a:hover {
     max-height: calc(100vh - 360px);
     object-fit: contain;
     display: block;
+    transition: opacity 0.3s ease;
+}
+
+.project-hero-media:hover img {
+    opacity: 0.85;
 }
 
 .project-hero-media video {

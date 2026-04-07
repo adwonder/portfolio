@@ -172,8 +172,30 @@ async function renderProject() {
                 <img src="${img}" alt="${p.title} — ${i + 1}">
             </div>
         `).join('');
+    }
 
-        initLightbox(p.gallery, p.title);
+    // Lightbox: hero cover (image projects only) + gallery
+    const hasHeroImage = p.media !== 'video' && p.cover;
+    const lightboxImages = [
+        ...(hasHeroImage ? [p.cover] : []),
+        ...(p.gallery || [])
+    ];
+
+    if (lightboxImages.length > 0) {
+        const openLightbox = initLightbox(lightboxImages, p.title);
+        const galleryOffset = hasHeroImage ? 1 : 0;
+
+        // Gallery item clicks (with offset to account for hero at index 0)
+        galleryEl.querySelectorAll('.gallery-item').forEach((item, i) => {
+            item.addEventListener('click', () => openLightbox(i + galleryOffset));
+        });
+
+        // Hero image click
+        if (hasHeroImage) {
+            heroMedia.addEventListener('click', (e) => {
+                if (e.target.tagName === 'IMG') openLightbox(0);
+            });
+        }
     }
 }
 
@@ -211,9 +233,12 @@ function initLightbox(images, title) {
         document.body.style.overflow = '';
     }
 
-    document.querySelectorAll('.gallery-item').forEach((item, i) => {
-        item.addEventListener('click', () => open(i));
-    });
+    // Hide nav and counter when only one image
+    if (images.length <= 1) {
+        lightbox.querySelector('.lightbox-prev').style.display = 'none';
+        lightbox.querySelector('.lightbox-next').style.display = 'none';
+        lightbox.querySelector('.lightbox-counter').style.display = 'none';
+    }
 
     lightbox.querySelector('.lightbox-close').addEventListener('click', close);
     lightbox.querySelector('.lightbox-prev').addEventListener('click', () => show(current - 1));
@@ -245,6 +270,8 @@ function initLightbox(images, title) {
             else show(current - 1);
         }
     }, { passive: true });
+
+    return open;
 }
 
 // ===== Render: About Page =====
@@ -348,7 +375,7 @@ function initCursor() {
     });
 
     document.addEventListener('mouseover', (e) => {
-        if (e.target.closest('a, .project, button, .play-btn')) {
+        if (e.target.closest('a, .project, button, .play-btn, .project-hero-media')) {
             cursor.classList.add('hover');
         } else {
             cursor.classList.remove('hover');
