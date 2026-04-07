@@ -302,7 +302,7 @@ a:hover {
 
 /* ===== Project Detail Page ===== */
 .project-hero {
-    padding: 140px 40px 20px;
+    padding: 170px 40px 20px;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -695,7 +695,11 @@ a:hover {
 
 @media (max-width: 640px) {
     .header {
-        padding: 20px 24px;
+        padding: 12px 20px;
+    }
+
+    .logo-img {
+        height: 40px;
     }
 
     .nav {
