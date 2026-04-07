@@ -105,6 +105,7 @@ async function renderProject() {
         video.setAttribute('playsinline', '');
         video.setAttribute('webkit-playsinline', '');
         video.preload = 'metadata';
+        if (p.cover) video.poster = p.cover; // show cover while video loads
         video.onloadedmetadata = () => {
             heroMedia.appendChild(video);
             heroMedia.style.minHeight = '';
@@ -217,9 +218,22 @@ function initLightbox(images, title) {
 
     function show(index) {
         current = (index + images.length) % images.length;
+        img.style.width = '';
+        img.style.height = '';
         img.src = images[current];
         img.alt = `${title} — ${current + 1}`;
         counter.textContent = `${current + 1} / ${images.length}`;
+        // Force full-quality decode + explicit pixel sizing to fix iOS Safari downsampling
+        if (img.decode) {
+            img.decode().then(() => {
+                if (!img.naturalWidth) return;
+                const maxW = window.innerWidth * 0.9;
+                const maxH = window.innerHeight * 0.9;
+                const scale = Math.min(maxW / img.naturalWidth, maxH / img.naturalHeight, 1);
+                img.style.width  = Math.round(img.naturalWidth  * scale) + 'px';
+                img.style.height = Math.round(img.naturalHeight * scale) + 'px';
+            }).catch(() => {});
+        }
     }
 
     function open(index) {
