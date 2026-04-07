@@ -315,14 +315,14 @@ a:hover {
 
 .project-hero-media img {
     width: 100%;
-    max-height: 75vh;
+    max-height: calc(100vh - 360px);
     object-fit: contain;
     display: block;
 }
 
 .project-hero-media video {
     width: 100%;
-    max-height: 75vh;
+    max-height: calc(100vh - 360px);
     object-fit: contain;
 }
 
@@ -712,7 +712,7 @@ a:hover {
 
     .project-hero-media img,
     .project-hero-media video {
-        max-height: 70vh;
+        max-height: calc(100vh - 280px);
     }
 
     .project-hero {
