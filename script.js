@@ -326,6 +326,13 @@ async function renderAbout() {
     } else {
         aboutGrid.classList.add('visible');
     }
+
+    // Lightbox for about photo
+    const openAboutLightbox = initLightbox(['photo.jpg'], a.heading || 'Photo');
+    const aboutPhotoEl = aboutGrid.querySelector('.about-photo');
+    if (aboutPhotoEl) {
+        aboutPhotoEl.addEventListener('click', () => openAboutLightbox(0));
+    }
 }
 
 // ===== Render: Contact Footer =====
@@ -389,7 +396,7 @@ function initCursor() {
     });
 
     document.addEventListener('mouseover', (e) => {
-        if (e.target.closest('a, .project, button, .play-btn, .project-hero-media')) {
+        if (e.target.closest('a, .project, button, .play-btn, .project-hero-media, .about-photo')) {
             cursor.classList.add('hover');
         } else {
             cursor.classList.remove('hover');
