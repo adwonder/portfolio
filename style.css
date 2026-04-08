@@ -695,7 +695,11 @@ a:hover {
 
     .about-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 32px;
+    }
+
+    .about-photo {
+        order: -1;
     }
 
     .project-gallery {
@@ -718,6 +722,18 @@ a:hover {
 
     .works {
         padding: 120px 24px 40px;
+    }
+
+    .about {
+        padding: 90px 24px 40px;
+    }
+
+    .about-photo {
+        aspect-ratio: 1 / 1;
+    }
+
+    .about-skills {
+        margin-top: 32px;
     }
 
     .project-hero {
