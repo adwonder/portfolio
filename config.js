@@ -14,7 +14,8 @@ const CONFIG = {
       "Blender",
       "Art Direction",
       "Compositing",
-      "3D Animation"
+      "3D Animation",
+      "2D Animation"
     ]
   },
   "socials": {
